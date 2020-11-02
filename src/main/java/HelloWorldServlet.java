@@ -9,16 +9,14 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
-        PrintWriter out = null;
-        try {
-            out = res.getWriter();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (out != null) {
-            out.printf("<h1>Hello World!%n</h1>");
-        }
+        PrintWriter out = res.getWriter();
+
+        String name = req.getParameter("name");
+        if (name != null)
+            out.printf("<h1>Hello %s</h1>%n", name);
+        else
+            out.println("<h1>Hello World</h1>");
     }
 }
