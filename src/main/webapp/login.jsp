@@ -1,11 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
+<%@ include file="partials/head.jsp" %>
 <body>
-<form method="POST" action="${pageContext.request.contextPath}/login.jsp">
+<%@ include file="partials/navbar.jsp" %>
+<h3>Please Log In</h3>
+<form method="POST" action="<c:url value="/login.jsp"/>">
     <label for="username">Username: </label>
     <input type="text" name="username" id="username"/><br><br>
     <label for="password">Password: </label>
@@ -17,5 +17,6 @@
     <% response.sendRedirect("/profile.jsp"); %>
 </c:if>
 
+<%@ include file="partials/footer.jsp" %>
 </body>
 </html>
