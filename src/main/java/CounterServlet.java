@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "CounterServlet", urlPatterns = "/counter")
+@WebServlet(name = "CounterServlet", urlPatterns = "/count")
 public class CounterServlet extends HttpServlet {
-    int counter = 0;
+    private int counter = 0;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
