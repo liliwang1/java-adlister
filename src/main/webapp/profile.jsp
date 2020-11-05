@@ -10,6 +10,7 @@
 
     <div class="container">
         <h1>Viewing your profile.</h1>
+<%--        <p>Hello ${name}</p>--%>
     </div>
 
 </body>
