@@ -9,13 +9,13 @@
 <body>
 <jsp:include page="../partials/navbar.jsp"/>
 
-<ul>
+<div class="container">
     <c:forEach var="ad" items="${ads}">
         <h4>${ad.id}   ${ad.title}</h4>
         <div>${ad.description}</div>
         <hr>
     </c:forEach>
-</ul>
+</div>
 
 </body>
 </html>
