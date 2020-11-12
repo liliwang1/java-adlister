@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
@@ -6,9 +7,12 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
     <h1>new user register</h1>
+    <c:if test="${sessionScope.registerError != null}">
+        <div class="alert alert-danger" role="alert">${sessionScope.registerError}</div>
+    </c:if>
     <form action="/user/register" method="post">
         <div class="form-group">
             <label for="username">Username</label>
@@ -21,6 +25,10 @@
         <div class="form-group">
             <label for="password">Password</label>
             <input id="password" name="password" class="form-control" type="password">
+        </div>
+        <div class="form-group">
+            <label for="confirmedPassword">Confirm Password</label>
+            <input id="confirmedPassword" name="confirmedPassword" class="form-control" type="password">
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
